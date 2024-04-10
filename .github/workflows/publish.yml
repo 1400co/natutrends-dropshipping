@@ -1,0 +1,60 @@
+name: Build and Deploy Angular Project
+
+on:
+  push:
+    branches:
+      - main  # Define en qué rama se activará este flujo de trabajo
+
+jobs:
+  build-and-push:
+    name: Build and Push Docker Image
+    runs-on: ubuntu-latest  # Define en qué ambiente se ejecutará este job
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'  # Define la versión de Node.js que necesitas
+
+      - name: Install dependencies
+        run: |
+          cd digital-experts-web
+          npm install
+
+      - name: Build the project
+        run: |
+          cd digital-experts-web
+          npm run build --prod
+
+      - name: Build Docker Image
+        run: |
+          cd digital-experts-web
+          docker build -t ghcr.io/${{ github.repository_owner }}/digital-experts:latest .
+
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ vars.TOKEN }}
+
+      - name: Push Docker Image to GHCR
+        run: docker push ghcr.io/${{ github.repository_owner }}/digital-experts:latest
+
+  deploy:
+    name: Deploy to Server
+    needs: build-and-push  # Este job se ejecutará solo si el job 'build-and-push' es exitoso
+    runs-on: ubuntu-latest
+    steps:
+      - name: SSH and Deploy
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ vars.REMOTE_HOST }}
+          username: ${{ vars.REMOTE_USER }}
+          password: ${{ vars.REMOTE_PASSWORD }}
+          port: ${{ vars.REMOTE_PORT }}
+          script: |
+            docker pull ghcr.io/${{ github.repository_owner }}/digital-experts:latest
+            docker-compose -f /path/to/docker-compose.yml up -d
