@@ -41,9 +41,9 @@ export class AppComponent implements OnInit {
   onPageView()
   {
     this.pixel.track("ViewContent", {
-      content_ids: ["ABC123", "XYZ456"], // Item SKUs
+      content_ids: ["Dropshipping"], // Item SKUs
       value: 100, // Value of all items
-      currency: "USD", // Currency of the value
+      currency: "COP", // Currency of the value
     });
   }
 
