@@ -1,0 +1,233 @@
+
+$primary-color: #68B2A0; // Verde Salvia
+$secondary-color: #5C7F7B; // Azul Suave
+
+.hero-section {
+  padding: 100px 0; // Ajusta el padding para mayor visualización del fondo
+  background-color: transparent; // Fondo transparente si decides no usar imagen
+  text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.7); // Texto sombreado para mejorar la legibilidad
+
+  h1 {
+    font-size: 2.75rem; // Tamaño más grande para el título
+    font-weight: 700; // Fuente más gruesa
+  }
+
+  h3 {
+    font-size: 1.5rem; // Tamaño adecuado para subtítulo
+    margin-bottom: 20px; // Espacio después del subtítulo
+  }
+
+  p {
+    font-size: 1.2rem; // Tamaño legible para el texto
+    max-width: 600px; // Ancho máximo para mantener la legibilidad
+    margin: auto; // Centra horizontalmente
+  }
+
+  .btn {
+    font-size: 1.25rem; // Tamaño de fuente más grande para el botón
+    padding: 10px 20px; // Más padding para un botón más grande
+    border-radius: 30px; // Bordes redondeados
+    font-weight: bold; // Texto en negrita
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); // Sombra para dar profundidad al botón
+
+    &:hover {
+      background-color: darken(#fff, 10%); // Oscurece el fondo al pasar el ratón
+    }
+  }
+}
+
+
+.footer-section {
+  background-color: $secondary-color;
+  // Otros estilos...
+}
+
+.benefits-section {
+  background-color: #f8f9fa; // Un color claro de fondo, puedes ajustarlo
+  h2 {
+    color: $primary-color;
+  }
+  .card {
+    border: none;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1); // Una ligera sombra para las tarjetas
+  }
+  .card-title {
+    color: $secondary-color; // Un color que contraste bien con el fondo
+  }
+}
+
+
+.features-section {
+  .feature-item {
+    background: #ffffff;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    .feature-icon {
+      font-size: 3rem; // Tamaño de los iconos
+      color: $primary-color; // Color de los iconos
+    }
+
+    h5 {
+      margin-top: 0;
+      color: $secondary-color; // Color del título de las características
+    }
+  }
+}
+
+.about-us-section {
+  background-color: #f2f2f2; // Un color de fondo suave para la sección
+  .lead {
+    font-size: 1.25rem;
+    color: $primary-color;
+  }
+  h2 {
+    color: $secondary-color;
+  }
+  img {
+    // Agrega un borde moderno y sombra para la imagen
+    border: 5px solid white;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+  .btn-primary {
+    background-color: $primary-color;
+    border-color: $primary-color;
+    &:hover {
+      background-color: darken($primary-color, 10%);
+      border-color: darken($primary-color, 10%);
+    }
+  }
+}
+
+.pricing-section {
+  .card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+  }
+
+  .card-title {
+    color: $primary-color; // Asegúrate de que el color primario esté definido.
+  }
+
+  .card-text {
+    font-size: 1rem;
+  }
+
+  .btn-primary {
+    background-color: $secondary-color; // Usar color secundario para botones.
+    border-color: $secondary-color;
+    &:hover {
+      background-color: darken($secondary-color, 10%);
+      border-color: darken($secondary-color, 10%);
+    }
+  }
+}
+
+.pricing-section .card-img-top {
+  width: 100%; /* Establece la imagen para que use el ancho completo del contenedor de la tarjeta */
+  height: 400px; /* Establece una altura fija para todas las imágenes */
+  object-fit: cover; /* Asegura que la imagen cubra el espacio disponible sin distorsionarse */
+  border-bottom: 1px solid #ccc; /* Opcional: añade un borde para separar la imagen del cuerpo de la tarjeta */
+}
+
+
+.guarantee-section {
+  background-color: #fff;
+  padding: 2rem 0;
+
+  h2 {
+    color: $primary-color;
+  }
+
+  h3 {
+    color: $secondary-color;
+  }
+
+  p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 1rem;
+  }
+
+  .btn-primary {
+    background-color: $primary-color;
+    border-color: $primary-color;
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+      border-color: darken($primary-color, 10%);
+    }
+  }
+}
+
+
+.faq-section {
+  background-color: #f8f9fa;
+
+  .card {
+    border: none;
+    border-bottom: 1px solid #e8e8e8;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    .card-header {
+      background-color: #fff;
+      border-bottom: none;
+
+      a {
+        display: block;
+        padding: 1rem 1.5rem;
+        font-weight: 600;
+        color: $secondary-color;
+        text-decoration: none;
+
+        &:hover, &:focus {
+          text-decoration: none;
+          color: darken($secondary-color, 5%);
+        }
+      }
+    }
+
+    .card-body {
+      font-size: 1rem;
+      color: #5a5a5a; // Un tono de gris neutro para una fácil lectura
+    }
+  }
+}
+
+.call-to-action-section {
+  background-color: $primary-color; // Asumiendo que tienes una variable para el color primario
+  color: #fff;
+
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+  }
+
+  .btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: $primary-color;
+    background-color: #fff;
+    border: none;
+
+    &:hover {
+      background-color: darken(#fff, 10%);
+      color: $primary-color;
+    }
+  }
+}
+

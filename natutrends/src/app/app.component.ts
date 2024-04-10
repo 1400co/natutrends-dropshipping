@@ -50,6 +50,7 @@ export class AppComponent implements OnInit {
   onContact()
   {
     this.pixel.track("Contact", {});
+    window.open('https://wa.me/573213903769', '_blank');
   }
 
 
