@@ -31,6 +31,9 @@
             ],
             "styles": [
               "src/styles.scss",
+              "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/font-awesome/css/font-awesome.css",
               "node_modules/@fortawesome/fontawesome-free/css/all.min.css"
             ],
             "scripts": [],
@@ -68,10 +71,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "natutrends-web:build:production"
+              "buildTarget": "digital-experts-web:build:production"
             },
             "development": {
-              "buildTarget": "natutrends-web:build:development"
+              "buildTarget": "digital-experts-web:build:development"
             }
           },
           "defaultConfiguration": "development"
