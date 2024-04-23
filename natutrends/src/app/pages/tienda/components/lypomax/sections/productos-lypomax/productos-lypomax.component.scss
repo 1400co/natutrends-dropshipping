@@ -1,0 +1,30 @@
+.bg-light {
+  background-color: #f8f9fa; /* Un fondo claro para la sección completa */
+}
+
+.text-pink {
+  color: #f09b56; /* Un tono rosa para los títulos */
+}
+
+.card {
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Eleva la tarjeta al pasar el mouse */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Asegúrate de que los tamaños de fuente sean coherentes y proporcionales */
+.card-title {
+  font-size: 1.25rem; /* Tamaño adecuado para los títulos de las tarjetas */
+}
+
+.card-text {
+  font-size: 1rem; /* Tamaño de fuente estándar para el texto */
+}
+
+
+.text-shadow {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Sombra para mejorar la legibilidad */
+}

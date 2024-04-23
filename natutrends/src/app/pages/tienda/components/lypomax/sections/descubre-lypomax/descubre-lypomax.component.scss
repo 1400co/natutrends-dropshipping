@@ -1,0 +1,27 @@
+.pink-background {
+  background-color: #f8f9fa; /* O el color de fondo rosa que prefieras */
+}
+
+/* Opcional: si necesitas ajustar los tamaños aún más, puedes añadir tu CSS personalizado. */
+.h6 {
+  font-size: 1rem; /* Esto es solo un ejemplo, ajusta según tus necesidades. */
+}
+
+.small {
+  font-size: 0.875rem; /* Ajusta el tamaño de fuente de los textos más pequeños si es necesario. */
+}
+
+/* Añade estilos personalizados aquí, como sombras de texto si es necesario */
+
+.display-4 {
+  font-weight: 700; /* Peso de fuente más grueso */
+  letter-spacing: -1px; /* Espaciado ligeramente negativo para un efecto más apretado */
+  color: #333; /* Un color oscuro para más contraste */
+  text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1); /* Sombra suave para resaltar */
+}
+
+.lead {
+  font-weight: 400; /* Peso normal pero puedes ajustar a 500 para un poco más de énfasis */
+  letter-spacing: 0.5px; /* Espaciado ligero para mejorar la legibilidad */
+  color: #555; /* Un color ligeramente más suave que el título */
+}

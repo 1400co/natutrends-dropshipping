@@ -7,6 +7,11 @@ import { LypomaxComponent } from './components/lypomax/lypomax.component';
 import { MagnesioComponent } from './components/magnesio/magnesio.component';
 import { ColagenoComponent } from './components/colageno/colageno.component';
 import { DigelasComponent } from './components/digelas/digelas.component';
+import { HeadComponent } from './components/lypomax/sections/head/head.component';
+import { DescubreLypomaxComponent } from './components/lypomax/sections/descubre-lypomax/descubre-lypomax.component';
+import { ContactanosLypomaxComponent } from './components/lypomax/sections/contactanos-lypomax/contactanos-lypomax.component';
+import { ProductosLypomaxComponent } from './components/lypomax/sections/productos-lypomax/productos-lypomax.component';
+import { KitLypomaxComponent } from './components/lypomax/sections/kit-lypomax/kit-lypomax.component';
 
 
 @NgModule({
@@ -15,11 +20,17 @@ import { DigelasComponent } from './components/digelas/digelas.component';
     LypomaxComponent,
     MagnesioComponent,
     ColagenoComponent,
-    DigelasComponent
+    DigelasComponent,
+    HeadComponent,
+    DescubreLypomaxComponent,
+    ContactanosLypomaxComponent,
+    ProductosLypomaxComponent,
+    KitLypomaxComponent
   ],
   imports: [
     CommonModule,
-    TiendaRoutingModule
+    TiendaRoutingModule,
+
   ]
 })
 export class TiendaModule { }

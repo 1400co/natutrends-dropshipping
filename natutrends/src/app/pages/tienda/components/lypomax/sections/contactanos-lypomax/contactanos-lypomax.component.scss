@@ -1,0 +1,49 @@
+
+
+.pink-background {
+  background-color: #f8f9fa; /* O el color de fondo rosa que prefieras */
+}
+
+.text-shadow {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.btn-maxcurvy {
+  background-color: #25D366; /* Color WhatsApp */
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  transition: transform 0.3s ease-in-out;
+  /* Resto de estilos de tu botón */
+}
+
+.btn-maxcurvy:hover {
+  transform: translateY(-2px);
+  /* Resto de estilos de hover de tu botón */
+}
+
+/* Animación pulsante para el botón */
+.animated-button {
+  animation: pulse 2s infinite;
+}
+
+
+.parallax {
+  /* Especifica la URL de tu imagen de fondo */
+  background-image: url('/assets/lypomax/fondo4.png');
+
+  /* Altura fija para la sección de parallax */
+  min-height: 500px;
+
+  /* Configuraciones de fondo para el efecto parallax */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  /* Estilo extra para asegurar que el contenido sobre el fondo sea legible */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
