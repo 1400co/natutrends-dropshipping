@@ -1,0 +1,61 @@
+.pink-background {
+  background-color: #f18444; /* O el color de fondo rosa que prefieras */
+}
+
+.container-fluid {
+  background-color: #f18444; /* Asegúrate de que la URL es correcta */
+  background-size: cover;
+  background-position: center;
+  padding: 50px 20px;
+}
+
+.pink-back{
+  background-color:  #f18444;
+}
+
+.bg-light {
+  background-color:  #f1b0b8; /* Fondo claro con opacidad para mejor lectura sobre imagen de fondo */
+  border-radius: 0.25rem;
+}
+
+.shadow {
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+}
+
+/* Sombras de texto para mejorar la legibilidad */
+/* Color específico para títulos y labels */
+h2, .accordion-header .accordion-button, .form-label {
+  color: #f18444; /* Color rosa */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Sombra para mejorar la legibilidad */
+}
+
+.btn-primary {
+  background-color: #007bff; /* Personalizar según el diseño de tu sitio */
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+  .container-fluid {
+    padding: 20px;
+  }
+}
+
+.animated-button {
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

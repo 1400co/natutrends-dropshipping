@@ -12,6 +12,10 @@ import { DescubreLypomaxComponent } from './components/lypomax/sections/descubre
 import { ContactanosLypomaxComponent } from './components/lypomax/sections/contactanos-lypomax/contactanos-lypomax.component';
 import { ProductosLypomaxComponent } from './components/lypomax/sections/productos-lypomax/productos-lypomax.component';
 import { KitLypomaxComponent } from './components/lypomax/sections/kit-lypomax/kit-lypomax.component';
+import { PreguntasLypomaxComponent } from './components/lypomax/sections/preguntas-lypomax/preguntas-lypomax.component';
+import { FooterLypomaxComponent } from './components/lypomax/sections/footer-lypomax/footer-lypomax.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -25,12 +29,15 @@ import { KitLypomaxComponent } from './components/lypomax/sections/kit-lypomax/k
     DescubreLypomaxComponent,
     ContactanosLypomaxComponent,
     ProductosLypomaxComponent,
-    KitLypomaxComponent
+    KitLypomaxComponent,
+    PreguntasLypomaxComponent,
+    FooterLypomaxComponent
   ],
   imports: [
     CommonModule,
     TiendaRoutingModule,
-
+    ReactiveFormsModule,
+    HttpClientModule
   ]
 })
 export class TiendaModule { }

@@ -1,0 +1,102 @@
+<div class="container-fluid py-5 pink-background" >
+  <div class="row justify-content-center">
+    <div class="col-lg-6">
+      <div class="bg-light pink-back p-4 shadow rounded">
+        <h2 class="mb-3">Preguntas Frecuentes</h2>
+        <div class="accordion" id="faqAccordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                ¿Cómo puedo realizar un pedido?
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Realizar un pedido es muy fácil. Solo debes seleccionar la cantidad de batidos que deseas, completar tu información de contacto y dirección de entrega en nuestra página, y listo. Nosotros nos encargaremos del resto y te enviaremos el pedido a tu domicilio.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                ¿El batido tiene algún registro sanitario?
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Sí, nuestro batido keto cuenta con el registro sanitario RSA-0023717-2023 emitido por INVIMA, lo que asegura que cumple con todas las normativas de salud y seguridad alimentaria colombianas.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                ¿Cómo debo tomar el batido para obtener mejores resultados?
+              </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Para mejores resultados, te recomendamos tomar un batido diariamente en reemplazo de tu desayuno o cena. Simplemente mezcla el contenido con agua o tu bebida vegetal preferida, agita bien y disfruta. Es una forma práctica y deliciosa de apoyar tu dieta keto y tus objetivos de pérdida de peso.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFour">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                ¿Qué sucede si no estoy en casa en el momento de la entrega?
+              </button>
+            </h2>
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Si no estás disponible en el momento de la entrega, coordinaremos contigo una nueva fecha y hora que te convenga. Nuestro objetivo es asegurarnos de que recibas tu pedido de manera conveniente y sin complicaciones.
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <form [formGroup]="pedidoForm" class="bg-light pink-back p-4 shadow rounded" (ngSubmit)="submitPedido()">
+        <h2 class="text-center mb-4">Realizar Pedido</h2>
+        <div class="mb-3">
+          <label for="nombreCompleto" class="form-label">Nombre completo</label>
+          <input type="text" class="form-control" id="nombreCompleto" formControlName="nombreCompleto" required>
+          <div *ngIf="pedidoForm.get('nombreCompleto')?.invalid && pedidoForm.get('nombreCompleto')?.touched" class="text-danger">Campo requerido</div>
+        </div>
+        <div class="mb-3">
+          <label for="numeroCelular" class="form-label">Número de celular</label>
+          <input type="number" class="form-control" id="numeroCelular" formControlName="numeroCelular" required>
+          <div *ngIf="pedidoForm.get('numeroCelular')?.invalid && pedidoForm.get('numeroCelular')?.touched" class="text-danger">Campo requerido debe ser numero celular de 10 digitos</div>
+        </div>
+        <div class="mb-3">
+          <label for="departamento" class="form-label">Departamento</label>
+          <input type="text" class="form-control" id="departamento" formControlName="departamento" required>
+          <div *ngIf="pedidoForm.get('departamento')?.invalid && pedidoForm.get('departamento')?.touched" class="text-danger">Campo requerido</div>
+        </div>
+        <div class="mb-3">
+          <label for="ciudad" class="form-label">Ciudad</label>
+          <input type="text" class="form-control" id="ciudad" formControlName="ciudad" required>
+          <div *ngIf="pedidoForm.get('ciudad')?.invalid && pedidoForm.get('ciudad')?.touched" class="text-danger">Campo requerido</div>
+        </div>
+        <div class="mb-3">
+          <label for="barrio" class="form-label">Barrio</label>
+          <input type="text" class="form-control" id="barrio" formControlName="barrio" required>
+          <div *ngIf="pedidoForm.get('barrio')?.invalid && pedidoForm.get('barrio')?.touched" class="text-danger">Campo requerido</div>
+        </div>
+        <div class="mb-3">
+          <label for="productos" class="form-label">Productos</label>
+          <select class="form-control" id="productos" formControlName="productos" required>
+            <option value="" disabled selected>Selecciona un producto</option>
+            <option value="1-Lypomax">1 Lypomax - $ 69.000</option>
+            <option value="2-Lypomax">2 Lypomax - $ 119.000</option>
+            <option value="3-Lypomax">Pagas 2 llevas 3 Lypomax - $ 138.000</option>
+          </select>
+          <div *ngIf="pedidoForm.get('productos')?.invalid && pedidoForm.get('productos')?.touched" class="text-danger">Campo requerido</div>
+        </div>
+        <button type="submit" class="btn btn-primary w-100 animated-button">Realizar Pedido y Recibirlo contra entrega</button>
+
+      </form>
+    </div>
+  </div>
+</div>
