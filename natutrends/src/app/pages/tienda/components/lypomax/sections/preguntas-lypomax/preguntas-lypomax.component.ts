@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 import { PixelService } from 'ngx-multi-pixel';
 
 @Component({
@@ -18,6 +19,7 @@ export class PreguntasLypomaxComponent {
   constructor(private fb: FormBuilder,
     private activatedRoute: ActivatedRoute,
     private pixel: PixelService,
+    private cookieService: CookieService,
     private http: HttpClient)
     { }
 
@@ -27,13 +29,21 @@ export class PreguntasLypomaxComponent {
       numeroCelular: ['', [Validators.required, Validators.pattern('^[0-9]{10}$')]],
       departamento: ['', Validators.required],
       ciudad: ['', Validators.required],
-      barrio: ['', Validators.required],
+      direccion: ['', Validators.required],
       productos: ['', Validators.required]
     });
 
     this.phoneNumber =  this.activatedRoute.snapshot.params['phoneNumber']; //get from route snapshot
     this.fbId =  this.activatedRoute.snapshot.params['facebookId']; //get from route snapshot
     this.onConsent();
+    this.loadFormDataFromCookie();
+  }
+
+  loadFormDataFromCookie(): void {
+    const formDataFromCookie = JSON.parse(this.cookieService.get('pedidoNatutrendsFormData'));
+    if (formDataFromCookie) {
+      this.pedidoForm.patchValue(formDataFromCookie);
+    }
   }
 
   onConsent(): void {
@@ -43,6 +53,8 @@ export class PreguntasLypomaxComponent {
   submitPedido() {
     if (this.pedidoForm.valid) {
       const formData = this.pedidoForm.value;
+      debugger
+      this.cookieService.set('pedidoNatutrendsFormData', JSON.stringify(formData));
 
       // Construir el mensaje legible para enviar al API de WhatsApp
       const mensajeWhatsapp = `Hola! Te contactamos para realizar un pedido:\n\n` +
@@ -50,7 +62,7 @@ export class PreguntasLypomaxComponent {
         `**Número de Celular:** ${formData.numeroCelular}\n` +
         `**Departamento:** ${formData.departamento}\n` +
         `**Ciudad:** ${formData.ciudad}\n` +
-        `**Barrio:** ${formData.barrio}\n` +
+        `**Direccion:** ${formData.direccion}\n` +
         `**Productos:** ${formData.productos}`;
 
       // Realizar la solicitud POST al API de WhatsApp
@@ -61,6 +73,7 @@ export class PreguntasLypomaxComponent {
         response => {
           // Manejar la respuesta del servidor si es necesario
           this.onCheckout();
+
           console.log('Respuesta del servidor:', response);
         },
         error => {
@@ -82,6 +95,7 @@ export class PreguntasLypomaxComponent {
       currency: "COP", // Currency of the value
     });
   }
+
 
 
 }
