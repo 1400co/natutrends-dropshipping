@@ -7,7 +7,7 @@
       <h3 class="text-shadow font-weight-bold animated-question">¿Tienes dudas?</h3>
       <h3 class="text-shadow">Comunícate con una asesora</h3>
       <div class="d-inline-block">
-        <a [href]="'https://wa.me/+57' + phoneNumber" class="btn btn-success text-white" role="button" target="_blank">
+        <a (click)="onContact()" class="btn btn-success text-white" role="button" target="_blank">
           <i class="fab fa-whatsapp"></i> Consulta con una Asesora Lypomax
         </a>
       </div>
