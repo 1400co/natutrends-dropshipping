@@ -33,8 +33,9 @@ export class LypomaxComponent implements OnInit {
 
   onCheckout()
   {
-    this.pixel.track("InitiateCheckout", {
-      content_ids: ["ABC123", "XYZ456"], // Item SKUs
+    this.pixel.track("Purchase", {
+      content_ids: ["Lypomax-01", "Lypomax-01"], // Item SKUs
+      content_name: "Lypomax",
       value: 100, // Value of all items
       currency: "USD", // Currency of the value
     });
