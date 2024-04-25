@@ -16,6 +16,7 @@ import { PreguntasLypomaxComponent } from './components/lypomax/sections/pregunt
 import { FooterLypomaxComponent } from './components/lypomax/sections/footer-lypomax/footer-lypomax.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { MenuLypomaxComponent } from './components/lypomax/sections/menu-lypomax/menu-lypomax.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { HttpClientModule } from '@angular/common/http';
     ProductosLypomaxComponent,
     KitLypomaxComponent,
     PreguntasLypomaxComponent,
-    FooterLypomaxComponent
+    FooterLypomaxComponent,
+    MenuLypomaxComponent
   ],
   imports: [
     CommonModule,

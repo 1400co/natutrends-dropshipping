@@ -73,11 +73,12 @@ export class PreguntasLypomaxComponent {
         response => {
           // Manejar la respuesta del servidor si es necesario
           this.onCheckout();
-
+          alert('Su pedido ha sido registrado con exito.')
           console.log('Respuesta del servidor:', response);
         },
         error => {
           // Manejar errores si la solicitud falla
+          alert('Ha ocurrido un error intentelo mas tarde.')
           console.error('Error al enviar la solicitud:', error);
         }
       );
@@ -85,6 +86,32 @@ export class PreguntasLypomaxComponent {
       this.pedidoForm.markAllAsTouched();
     }
   }
+
+  submitPedido2() {
+    if (this.pedidoForm.valid) {
+      const formData = this.pedidoForm.value;
+      // ...resto de tu código...
+
+      // Encode your message to make it URL-safe
+      const mensajeWhatsapp = encodeURIComponent(`Hola! Te contactamos para realizar un pedido:\n\n` +
+        `Nombre Completo: ${formData.nombreCompleto}\n` +
+        `Número de Celular: ${formData.numeroCelular}\n` +
+        `Departamento: ${formData.departamento}\n` +
+        `Ciudad: ${formData.ciudad}\n` +
+        `Dirección: ${formData.direccion}\n` +
+        `Productos: ${formData.productos}`);
+
+      // Build the WhatsApp URL
+      const whatsappURL = `https://wa.me/${this.phoneNumber}?text=${mensajeWhatsapp}`;
+      
+      this.onCheckout();
+      // Redirect to the WhatsApp URL
+      window.open(whatsappURL, '_blank');
+    } else {
+      this.pedidoForm.markAllAsTouched();
+    }
+  }
+
 
 
   onCheckout()
