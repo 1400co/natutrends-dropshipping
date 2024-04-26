@@ -1,12 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LypomaxComponent } from './components/lypomax/lypomax.component';
+import { DietaComponent } from './components/dieta/dieta.component';
+
 
 const routes: Routes = [
   {
     path: 'lypomax/:phoneNumber/:facebookId',
-    component: LypomaxComponent // Este es el componente que manejará la ruta
-  }
+    component: LypomaxComponent
+  },
+  {
+    path: 'dieta/:phoneNumber/:facebookId',
+    component: DietaComponent
+  },
 ];
 
 @NgModule({
