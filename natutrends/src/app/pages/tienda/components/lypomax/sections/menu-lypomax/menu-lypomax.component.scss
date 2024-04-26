@@ -1,4 +1,11 @@
 /* menu-semanal.component.css */
+.img-fixed-size {
+  width: 50%; /* Ajusta al ancho del contenedor */
+  height: 150px; /* Altura fija para todas las imágenes */
+  object-fit: cover; /* Mantiene la relación de aspecto sin distorsión */
+}
+
+
 .text-shadow {
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.75);
 }
