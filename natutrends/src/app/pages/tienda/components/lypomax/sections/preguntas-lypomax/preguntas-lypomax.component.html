@@ -88,15 +88,35 @@
           <label for="productos" class="form-label">Productos</label>
           <select class="form-control" id="productos" formControlName="productos" required>
             <option value="" disabled selected>Selecciona un producto</option>
-            <option value="1-Lypomax">1 Lypomax - $ 69.000</option>
-            <option value="2-Lypomax">2 Lypomax - $ 119.000</option>
-            <option value="3-Lypomax">Pagas 2 llevas 3 Lypomax - $ 138.000</option>
+            <option value="1-Lypomax $69.000">1 Lypomax  $69.000</option>
+            <option value="2-Lypomax $119.000">2 Lypomax  $119.000</option>
+            <option value="3-Lypomax $138.000">Pagas 2 llevas 3 Lypomax  $138.000</option>
           </select>
           <div *ngIf="pedidoForm.get('productos')?.invalid && pedidoForm.get('productos')?.touched" class="text-danger">Campo requerido</div>
         </div>
         <button type="submit" class="btn btn-primary w-100 animated-button">Realizar Pedido y Recibirlo contra entrega</button>
 
       </form>
+    </div>
+  </div>
+</div>
+
+<!-- Add this directly within the HTML of your current component -->
+<div class="modal fade" id="purchaseConfirmationModal" tabindex="-1" role="dialog" aria-labelledby="purchaseConfirmationModalLabel" aria-hidden="true" [class.show]="showModal" style="display: {{showModal ? 'block' : 'none'}}; background-color: rgba(0,0,0,0.5);">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="purchaseConfirmationModalLabel">Confirmación de Compra</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="showModal = false">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ¡Gracias por su compra! Su pedido ha sido registrado con éxito.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="showModal = false">Cerrar</button>
+      </div>
     </div>
   </div>
 </div>
