@@ -45,7 +45,7 @@ export class LandingComponent {
   onContact()
   {
     this.pixel.track("Contact", {});
-    window.open('https://wa.me/573213903769', '_blank');
+    window.open('https://wa.link/33rh55', '_blank');
   }
 
 }
