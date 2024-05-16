@@ -1,18 +1,25 @@
 .bg-orange {
   background-color: #FFA500;
 }
-.bg-light-orange {
-  background-color: #FFD580;
-}
+
 .text-orange {
   color: #FFA500;
 }
+
 .card-title {
   font-weight: bold;
 }
-.card {
-  border: none;
-}
+
 .card-body {
   border-radius: 8px;
+}
+
+.btn-primary {
+  background-color: #FFA500;
+  border-color: #FFA500;
+}
+
+.btn-primary:hover {
+  background-color: #e69500;
+  border-color: #e69500;
 }

@@ -19,6 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MenuLypomaxComponent } from './components/lypomax/sections/menu-lypomax/menu-lypomax.component';
 import { DietaComponent } from './components/dieta/dieta.component';
 import { HeaderDietaComponent } from './components/dieta/sections/header-dieta/header-dieta.component';
+import { CallToActionComponent } from './components/dieta/sections/call-to-action/call-to-action.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { HeaderDietaComponent } from './components/dieta/sections/header-dieta/h
     FooterLypomaxComponent,
     MenuLypomaxComponent,
     DietaComponent,
-    HeaderDietaComponent
+    HeaderDietaComponent,
+    CallToActionComponent
   ],
   imports: [
     CommonModule,
